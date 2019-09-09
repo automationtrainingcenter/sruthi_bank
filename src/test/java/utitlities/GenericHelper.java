@@ -1,9 +1,11 @@
 package utitlities;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 
 public class GenericHelper {
 	
@@ -20,6 +22,17 @@ public class GenericHelper {
 		 * folder or inside another folder of project folder.
 		 */
 		return System.getProperty("user.dir") + File.separator + folderName + File.separator + fileName;
+	}
+	
+	public static String readProperty(String folderName, String fileName, String propName) {
+		try {
+			FileInputStream fis = new FileInputStream(getFilePath(folderName, fileName));
+			Properties prop = new Properties();
+			prop.load(fis);
+			return prop.getProperty(propName);
+		} catch (Exception e) {
+			return "";
+		}
 	}
 	
 	
