@@ -5,10 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BankHomePage {
-	
+
 	WebDriver driver;
-	
-	
+
 	public BankHomePage(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -19,7 +18,7 @@ public class BankHomePage {
 //		return uname;
 		return driver.findElement(By.id("txtuId"));
 	}
-	
+
 	// password
 	public WebElement password() {
 		return driver.findElement(By.id("txtPword"));
