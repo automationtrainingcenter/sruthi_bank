@@ -14,10 +14,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class BrowserHelper {
-	public static WebDriver driver;
+	public WebDriver driver;
 	
 	//open browser method
-	public static void openBrowser(String browserName, String url) {
+	public void openBrowser(String browserName, String url) {
 		if(browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", GenericHelper.getFilePath("drivers", "chromedriver.exe"));
 			driver = new ChromeDriver();
@@ -34,7 +34,7 @@ public class BrowserHelper {
 	
 	
 	//close browser
-	public static void closeBrowser() {
+	public void closeBrowser() {
 		if(driver.getWindowHandles().size() > 1) {
 			driver.quit();
 		}else {

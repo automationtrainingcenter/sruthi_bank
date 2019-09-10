@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="include and exclude suite">
+	<test name="include and exclude test">
+		<classes>
+			<class name="banking.primusbank.BasicExecution">
+				<methods>
+					<include name="adminLogin" />
+					<include name="roleCreationReset" />
+					<include name="roleCreationCancel" />
+					<include name="branchCreationReset" />
+					<include name="logout" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

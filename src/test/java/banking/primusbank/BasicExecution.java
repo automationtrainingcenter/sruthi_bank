@@ -7,13 +7,13 @@ import utitlities.BrowserHelper;
 import utitlities.GenericHelper;
 
 public class BasicExecution extends TestExecution{
-	@BeforeClass
+	@BeforeClass(groups = {"role" , "create_valid", "create", "reset", "cancel", "blank", "branch", "employee", "employeeDP", "roleDP"})
 	public void browserLaunch() {
-		BrowserHelper.openBrowser("chrome", GenericHelper.readProperty("resources", "config.properties", "ur"));
+		openBrowser("chrome", GenericHelper.readProperty("resources", "config.properties", "url"));
 	}
 	
-	@AfterClass
-	public void closeBrowser() {
-		BrowserHelper.closeBrowser();
+	@AfterClass(groups = {"role" , "create_valid", "create", "reset", "cancel", "blank", "branch", "employee", "employeeDP", "roleDP"})
+	public void browserClose() {
+		closeBrowser();
 	}
 }
