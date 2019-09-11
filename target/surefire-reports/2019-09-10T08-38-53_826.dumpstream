@@ -1,4 +1,0 @@
-# Created at 2019-09-10T08:38:54.507
-Boot Manifest-JAR contains absolute paths in classpath 'D:\SSTS\7AMMay\primusbank\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="browser compatability suite">
+	<parameter name="url" value="http://primusbank.qedgetech.com/"/>
+	<test name="chrome browser test">
+		<parameter name="browserName" value="chrome"/>
+		<groups>
+			<run>
+				<include name="reset"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="banking.primusbank.ParameterExecution">
+			</class>
+		</classes>
+	</test>
+	<test name="firefox browser test">
+		<parameter name="browserName" value="firefox"/>
+		<groups>
+			<run>
+				<include name="cancel"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="banking.primusbank.ParameterExecution">
+			</class>
+		</classes>
+	</test>
+</suite>

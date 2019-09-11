@@ -201,8 +201,8 @@ public class TestExecution extends BrowserHelper{
 		employeeCreationPage = employeeDetailsPage.clickNewEmployee();
 		employeeCreationPage.fillEmployerName("sunshine");
 		employeeCreationPage.fillLoginPassword("12345");
-		employeeCreationPage.selectRole("manager");
-		employeeCreationPage.selectBranch("changed");
+		employeeCreationPage.selectRole("bankerONE");
+		employeeCreationPage.selectBranch("hyderabad");
 		employeeCreationPage.clickReset();
 
 	}
@@ -215,8 +215,8 @@ public class TestExecution extends BrowserHelper{
 
 	}
 	
-	@Test(priority = 16, groups = {"employee" , "employeeDP"})
-	public void employeeCreationResetWithDP(String empName, String loginPass, String roleName, String branchName) {
+	@Test(priority = 16, groups = {"employee" , "employeeDP"}, dataProviderClass=DataProviderHelper.class, dataProvider="employeeDP")
+	public void employeeCreationResetWithDP(String empName, String loginPass, String roleName, String branchName) throws InterruptedException {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreationPage = employeeDetailsPage.clickNewEmployee();
 		employeeCreationPage.fillEmployerName(empName);
@@ -224,10 +224,10 @@ public class TestExecution extends BrowserHelper{
 		employeeCreationPage.selectRole(roleName);
 		employeeCreationPage.selectBranch(branchName);
 		employeeCreationPage.clickReset();
-
+		Thread.sleep(2000);
 	}
 	
-	@Test(priority = 17, groups = {"role" , "roleDP"})
+	@Test(priority = 17, groups = {"role" , "roleDP"}, dataProviderClass=DataProviderHelper.class, dataProvider="roleDP")
 	public void roleCreationResetWithDP(String roleName, String roleType) {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
